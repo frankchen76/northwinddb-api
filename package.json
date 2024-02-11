@@ -7,7 +7,7 @@
         "dev": "nodemon --watch ./src --exec node --inspect=9228 --signal SIGINT -r ts-node/register -r dotenv/config ./src/index.ts",
         "build": "tsc --build",
         "dev-old": "nodemon --watch ./dist --exec node --inspect=9239 --signal SIGINT -r dotenv/config ./dist/index.js",
-        "start": "node ./lib/index.js",
+        "start": "node ./lib/src/index.js",
         "watchold": "nodemon --watch ./src --exec \"npm run start\"",
         "test-old": "echo \"Error: no test specified\" && exit 1"
     },
