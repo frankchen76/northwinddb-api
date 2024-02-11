@@ -1,0 +1,37 @@
+{
+    "name": "northwinddb-api",
+    "version": "1.0.0",
+    "description": "NorthWind DB API",
+    "main": "./lib/index.js",
+    "scripts": {
+        "dev": "nodemon --watch ./src --exec node --inspect=9228 --signal SIGINT -r ts-node/register -r dotenv/config ./src/index.ts",
+        "build": "tsc --build",
+        "dev-old": "nodemon --watch ./dist --exec node --inspect=9239 --signal SIGINT -r dotenv/config ./dist/index.js",
+        "start": "node ./lib/index.js",
+        "watchold": "nodemon --watch ./src --exec \"npm run start\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "react",
+        "node.js"
+    ],
+    "author": "Frank Chen",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/passport-azure-ad": "^4.3.5",
+        "dotenv": "^16.3.1",
+        "nodemon": "^3.0.2",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "@azure/cosmos": "^4.0.0",
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "debug": "^4.3.4",
+        "passport": "^0.7.0",
+        "passport-azure-ad": "^4.3.5",
+        "restify": "^11.1.0"
+    }
+}
