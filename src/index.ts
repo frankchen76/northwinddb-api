@@ -22,7 +22,14 @@ var options = {
     loggingLevel: config.creds.loggingLevel,
 };
 
-const server = restify.createServer({
+// Get initial settings from environment variables
+const env = process.env.NODE_ENV || 'production';
+const port = process.env.PORT || 8080;
+
+const server = restify.createServer(env === 'production' ? {
+    name: 'NorthWindDB API',
+    version: '1.0.0'
+} : {
     name: 'NorthWindDB API',
     version: '1.0.0',
     key: fs.readFileSync('C:\\Tools\\OpenSSL\\localhost\\localhost.key'),
@@ -79,9 +86,7 @@ const echoFunc = (req, res, next) => {
 }
 
 // enable the AAD to secure the REST API endpoint
-server.get('/echo/:name', passport.authenticate('oauth-bearer', {
-    session: false
-}), echoFunc);
+server.get('/echo/:name', echoFunc);
 
 //server.get('/echo/:name', echoFunc);
 
@@ -114,6 +119,6 @@ server.post('/api/products', passport.authenticate('oauth-bearer', {
     session: false
 }), getProducts);
 
-server.listen(8080, function () {
-    console.log('%s listening at %s', server.name, server.url);
+server.listen(port, function () {
+    console.log(`${server.name} listening at ${server.url}. environment: ${env}`);
 });
