@@ -9,7 +9,7 @@
         "dev-old": "nodemon --watch ./dist --exec node --inspect=9239 --signal SIGINT -r dotenv/config ./dist/index.js",
         "start": "node ./lib/index.js",
         "watchold": "nodemon --watch ./src --exec \"npm run start\"",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test-old": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
         "react",
