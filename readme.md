@@ -34,4 +34,4 @@ DB_CID_PRODUCTS=[cosmos-containerid-products]
 * ```npm start```: start api
 
 ## Change logs
-### v1.0.0
+### v1.0.0: init code
